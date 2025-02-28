@@ -64,7 +64,7 @@ const AdminProductsPage = async (props: {
             <TableHead className='text-right'>CIJENA</TableHead>
             <TableHead>KATEGORIJA</TableHead>
             <TableHead>STANJE</TableHead>
-            <TableHead>GLASANJE</TableHead>
+            <TableHead>OCJENE</TableHead>
             <TableHead className='w-[100px]'></TableHead>
           </TableRow>
         </TableHeader>

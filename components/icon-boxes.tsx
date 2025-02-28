@@ -1,4 +1,4 @@
-import { DollarSign, Headset, ShoppingBag, WalletCards } from 'lucide-react';
+import { Euro, Headset, ShoppingBag, WalletCards } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 
 const IconBoxes = () => {
@@ -14,7 +14,7 @@ const IconBoxes = () => {
             </div>
           </div>
           <div className='space-y-2'>
-            <DollarSign />
+          <Euro />
             <div className='text-sm font-bold'>Garantovan povrat novca</div>
             <div className='text-sm text-muted-foreground'>
               Do 30 dana od dobijanja artikla.

@@ -142,6 +142,6 @@ export const insertReviewSchema = z.object({
   rating: z.coerce
     .number()
     .int()
-    .min(1, 'Rating mora imati najmanje 1')
-    .max(5, 'Rating može biti najviše 5'),
+    .min(1, 'Ocjena mora imati najmanje 1')
+    .max(5, 'Ocjena može biti najviše 5'),
 });

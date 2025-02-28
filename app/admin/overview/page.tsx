@@ -106,7 +106,7 @@ const AdminOverviewPage = async () => {
                 {summary.latestSales.map((order) => (
                   <TableRow key={order.id}>
                     <TableCell>
-                      {order?.user?.name ? order.user.name : 'Deleted User'}
+                      {order?.user?.name ? order.user.name : 'Obrisan Korsnik'}
                     </TableCell>
                     <TableCell>
                       {formatDateTime(order.createdAt).dateOnly}
