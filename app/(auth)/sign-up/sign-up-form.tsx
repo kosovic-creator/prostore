@@ -24,7 +24,7 @@ const SignUpForm = () => {
 
     return (
       <Button disabled={pending} className='w-full' variant='default'>
-        {pending ? 'Submitting...' : 'Sign Up'}
+        {pending ? 'Učlanjenje...' : 'Dodajemo novog korisnika'}
       </Button>
     );
   };
@@ -34,7 +34,7 @@ const SignUpForm = () => {
       <input type='hidden' name='callbackUrl' value={callbackUrl} />
       <div className='space-y-6'>
         <div>
-          <Label htmlFor='email'>Name</Label>
+          <Label htmlFor='email'>Ime</Label>
           <Input
             id='name'
             name='name'
@@ -54,7 +54,7 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <Label htmlFor='password'>Password</Label>
+          <Label htmlFor='password'>Lozinka</Label>
           <Input
             id='password'
             name='password'
@@ -65,7 +65,7 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <Label htmlFor='confirmPassword'>Confirm Password</Label>
+          <Label htmlFor='confirmPassword'>Potvfdi Lozinku</Label>
           <Input
             id='confirmPassword'
             name='confirmPassword'
@@ -84,9 +84,9 @@ const SignUpForm = () => {
         )}
 
         <div className='text-sm text-center text-muted-foreground'>
-          Already have an account?{' '}
+         Već imate nalog?{' '}
           <Link href='/sign-in' target='_self' className='link'>
-            Sign In
+            Prijavi se
           </Link>
         </div>
       </div>

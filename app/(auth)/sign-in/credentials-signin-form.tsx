@@ -24,7 +24,7 @@ const CredentialsSignInForm = () => {
 
     return (
       <Button disabled={pending} className='w-full' variant='default'>
-        {pending ? 'Signing In...' : 'Sign In'}
+        {pending ? 'SPrijavljivanje...' : 'Prijava'}
       </Button>
     );
   };
@@ -45,7 +45,7 @@ const CredentialsSignInForm = () => {
           />
         </div>
         <div>
-          <Label htmlFor='password'>Password</Label>
+          <Label htmlFor='password'>Lozinka</Label>
           <Input
             id='password'
             name='password'
@@ -64,9 +64,9 @@ const CredentialsSignInForm = () => {
         )}
 
         <div className='text-sm text-center text-muted-foreground'>
-          Don&apos;t have an account?{' '}
+          Nemate nalog?{' '}
           <Link href='/sign-up' target='_self' className='link'>
-            Sign Up
+            Napravi nalog
           </Link>
         </div>
       </div>
