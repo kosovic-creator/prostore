@@ -58,7 +58,7 @@ const PaymentMethodForm = ({
       <div className='max-w-md mx-auto space-y-4'>
         <h1 className='h2-bold mt-4'>Payment Method</h1>
         <p className='text-sm text-muted-foreground'>
-          Please select a payment method
+          Izaberite način plaćanja
         </p>
         <Form {...form}>
           <form
@@ -108,7 +108,7 @@ const PaymentMethodForm = ({
                 ) : (
                   <ArrowRight className='w-4 h-4' />
                 )}{' '}
-                Continue
+                Nastavi
               </Button>
             </div>
           </form>

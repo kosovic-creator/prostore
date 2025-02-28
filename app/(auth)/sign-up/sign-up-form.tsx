@@ -24,7 +24,7 @@ const SignUpForm = () => {
 
     return (
       <Button disabled={pending} className='w-full' variant='default'>
-        {pending ? 'Učlanjenje...' : 'Dodajemo novog korisnika'}
+        {pending ? 'Dodavanje...' : 'Novi korisnik'}
       </Button>
     );
   };
@@ -86,7 +86,7 @@ const SignUpForm = () => {
         <div className='text-sm text-center text-muted-foreground'>
          Već imate nalog?{' '}
           <Link href='/sign-in' target='_self' className='link'>
-            Prijavi se
+            Prijavite se
           </Link>
         </div>
       </div>
