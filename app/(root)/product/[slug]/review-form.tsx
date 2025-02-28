@@ -98,15 +98,15 @@ const ReviewForm = ({
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <Button onClick={handleOpenForm} variant='default'>
-        Write a Review
+       Unesi tvoje iskustvo
       </Button>
       <DialogContent className='sm:max-w-[425px]'>
         <Form {...form}>
           <form method='post' onSubmit={form.handleSubmit(onSubmit)}>
             <DialogHeader>
-              <DialogTitle>Write a Review</DialogTitle>
+              <DialogTitle>Unesi tvoje iskustvo</DialogTitle>
               <DialogDescription>
-                Share your thoughts with other customers
+              Podijelite svoje iskustvo sa drugim kupcima.
               </DialogDescription>
             </DialogHeader>
             <div className='grid gap-4 py-4'>
@@ -115,9 +115,9 @@ const ReviewForm = ({
                 name='title'
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Title</FormLabel>
+                    <FormLabel>Naziv</FormLabel>
                     <FormControl>
-                      <Input placeholder='Enter title' {...field} />
+                      <Input placeholder='Unesi naziv' {...field} />
                     </FormControl>
                   </FormItem>
                 )}
@@ -128,9 +128,9 @@ const ReviewForm = ({
                 render={({ field }) => {
                   return (
                     <FormItem>
-                      <FormLabel>Description</FormLabel>
+                      <FormLabel>Karakteristike</FormLabel>
                       <FormControl>
-                        <Textarea placeholder='Enter description' {...field} />
+                        <Textarea placeholder='Unesi opis' {...field} />
                       </FormControl>
                     </FormItem>
                   );

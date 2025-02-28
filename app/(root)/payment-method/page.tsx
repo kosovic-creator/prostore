@@ -5,14 +5,14 @@ import PaymentMethodForm from './payment-method-form';
 import CheckoutSteps from '@/components/shared/checkout-steps';
 
 export const metadata: Metadata = {
-  title: 'SIzaberite način plaćanja',
+  title: 'Izaberite način plaćanja',
 };
 
 const PaymentMethodPage = async () => {
   const session = await auth();
   const userId = session?.user?.id;
 
-  if (!userId) throw new Error('Kofisnik nije nađen);
+  if (!userId) throw new Error('Korisnik nije nađen');
 
   const user = await getUserById(userId);
 
