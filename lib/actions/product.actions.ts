@@ -128,7 +128,7 @@ export async function deleteProduct(id: string) {
 
     return {
       success: true,
-      message: 'Product deleted successfully',
+      message: 'Artikal je uspješno obrisan',
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -145,7 +145,7 @@ export async function createProduct(data: z.infer<typeof insertProductSchema>) {
 
     return {
       success: true,
-      message: 'Product created successfully',
+      message: 'Artikal je uspješno kreiran',
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -160,7 +160,7 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
       where: { id: product.id },
     });
 
-    if (!productExists) throw new Error('Product not found');
+    if (!productExists) throw new Error('Artikal nije nađen');
 
     await prisma.product.update({
       where: { id: product.id },
@@ -171,7 +171,7 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
 
     return {
       success: true,
-      message: 'Product updated successfully',
+      message: 'Artikal je uspješno ažuriran',
     };
   } catch (error) {
     return { success: false, message: formatError(error) };

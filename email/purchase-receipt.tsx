@@ -70,23 +70,23 @@ type OrderInformationProps = {
 export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
   return (
     <Html>
-      <Preview>VPregled prispjele porudžbine</Preview>
+      <Preview>Pregled prispjele porudžbine</Preview>
       <Tailwind>
         <Head />
         <Body className='font-sans bg-white'>
           <Container className='max-w-xl'>
-            <Heading>Purchase Receipt</Heading>
+            <Heading>Prispjele Porudžbine</Heading>
             <Section>
               <Row>
                 <Column>
                   <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
-                    Order ID
+                   ID
                   </Text>
                   <Text className='mt-0 mr-4'>{order.id.toString()}</Text>
                 </Column>
                 <Column>
                   <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
-                    Purchase Date
+                    Datum Porudžbine
                   </Text>
                   <Text className='mt-0 mr-4'>
                     {dateFormatter.format(order.createdAt)}
@@ -94,7 +94,7 @@ export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
                 </Column>
                 <Column>
                   <Text className='mb-0 mr-4 text-gray-500 whitespace-nowrap text-nowrap'>
-                    Price Paid
+                    Plaćeno
                   </Text>
                   <Text className='mt-0 mr-4'>
                     {formatCurrency(order.totalPrice)}

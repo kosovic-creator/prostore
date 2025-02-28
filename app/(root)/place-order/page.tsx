@@ -79,9 +79,9 @@ const PlaceOrderPage = async () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Item</TableHead>
-                    <TableHead>Quantity</TableHead>
-                    <TableHead>Price</TableHead>
+                    <TableHead>Artikal</TableHead>
+                    <TableHead>Količina</TableHead>
+                    <TableHead>Cijena</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -118,19 +118,19 @@ const PlaceOrderPage = async () => {
           <Card>
             <CardContent className='p-4 gap-4 space-y-4'>
               <div className='flex justify-between'>
-                <div>Items</div>
+                <div>Artikal</div>
                 <div>{formatCurrency(cart.itemsPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Tax</div>
+                <div>Porez</div>
                 <div>{formatCurrency(cart.taxPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Shipping</div>
+                <div>Dostava</div>
                 <div>{formatCurrency(cart.shippingPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Total</div>
+                <div>Ukupno</div>
                 <div>{formatCurrency(cart.totalPrice)}</div>
               </div>
               <PlaceOrderForm />

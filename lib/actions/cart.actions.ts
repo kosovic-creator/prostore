@@ -46,7 +46,7 @@ export async function addItemToCart(data: CartItem) {
     const product = await prisma.product.findFirst({
       where: { id: item.productId },
     });
-    if (!product) throw new Error('Product not found');
+    if (!product) throw new Error('Artikal nije nađen');
 
     if (!cart) {
       // Create new cart object
@@ -67,7 +67,7 @@ export async function addItemToCart(data: CartItem) {
 
       return {
         success: true,
-        message: `${product.name} added to cart`,
+        message: `${product.name} dodato u korpu`,
       };
     } else {
       // Check if item is already in cart
@@ -78,7 +78,7 @@ export async function addItemToCart(data: CartItem) {
       if (existItem) {
         // Check stock
         if (product.stock < existItem.qty + 1) {
-          throw new Error('Not enough stock');
+          throw new Error('Nema na stanju');
         }
 
         // Increase the quantity
@@ -88,7 +88,7 @@ export async function addItemToCart(data: CartItem) {
       } else {
         // If item does not exist in cart
         // Check stock
-        if (product.stock < 1) throw new Error('Not enough stock');
+        if (product.stock < 1) throw new Error('Nema na stanju');
 
         // Add item to the cart.items
         cart.items.push(item);
@@ -108,7 +108,7 @@ export async function addItemToCart(data: CartItem) {
       return {
         success: true,
         message: `${product.name} ${
-          existItem ? 'updated in' : 'added to'
+          existItem ? 'promjenjeno u' : 'dodato u'
         } cart`,
       };
     }
@@ -123,7 +123,7 @@ export async function addItemToCart(data: CartItem) {
 export async function getMyCart() {
   // Check for cart cookie
   const sessionCartId = (await cookies()).get('sessionCartId')?.value;
-  if (!sessionCartId) throw new Error('Cart session not found');
+  if (!sessionCartId) throw new Error('Sesija korpe nije nađena');
 
   // Get session and user ID
   const session = await auth();
@@ -151,23 +151,23 @@ export async function removeItemFromCart(productId: string) {
   try {
     // Check for cart cookie
     const sessionCartId = (await cookies()).get('sessionCartId')?.value;
-    if (!sessionCartId) throw new Error('Cart session not found');
+    if (!sessionCartId) throw new Error('Sesija korpe nije nađena');
 
     // Get Product
     const product = await prisma.product.findFirst({
       where: { id: productId },
     });
-    if (!product) throw new Error('Product not found');
+    if (!product) throw new Error('Artikal nije nađen');
 
     // Get user cart
     const cart = await getMyCart();
-    if (!cart) throw new Error('Cart not found');
+    if (!cart) throw new Error('Korpa nije nađena');
 
     // Check for item
     const exist = (cart.items as CartItem[]).find(
       (x) => x.productId === productId
     );
-    if (!exist) throw new Error('Item not found');
+    if (!exist) throw new Error('Artikal nije nađen');
 
     // Check if only one in qty
     if (exist.qty === 1) {
@@ -194,7 +194,7 @@ export async function removeItemFromCart(productId: string) {
 
     return {
       success: true,
-      message: `${product.name} was removed from cart`,
+      message: `${product.name} je uklonjena iz korpe`,
     };
   } catch (error) {
     return { success: false, message: formatError(error) };

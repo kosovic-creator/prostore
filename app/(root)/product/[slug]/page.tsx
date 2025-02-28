@@ -48,7 +48,7 @@ const ProductDetailsPage = async (props: {
               </div>
             </div>
             <div className='mt-10'>
-              <p className='font-semibold'>Description</p>
+              <p className='font-semibold'>Opis</p>
               <p>{product.description}</p>
             </div>
           </div>
@@ -57,7 +57,7 @@ const ProductDetailsPage = async (props: {
             <Card>
               <CardContent className='p-4'>
                 <div className='mb-2 flex justify-between'>
-                  <div>Price</div>
+                  <div>Cijena</div>
                   <div>
                     <ProductPrice value={Number(product.price)} />
                   </div>
@@ -91,7 +91,7 @@ const ProductDetailsPage = async (props: {
         </div>
       </section>
       <section className='mt-10'>
-        <h2 className='h2-bold mb-5'>Customer Reviews</h2>
+        <h2 className='h2-bold mb-5'>Korisnički pregled</h2>
         <ReviewList
           userId={userId || ''}
           productId={product.id}

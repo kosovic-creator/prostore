@@ -153,7 +153,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                 ) : (
                   <ArrowRight className='w-4 h-4' />
                 )}{' '}
-                Nastavite da dodate adresu dostave
+                Dodajte adresu dostave.
               </Button>
             </CardContent>
           </Card>
