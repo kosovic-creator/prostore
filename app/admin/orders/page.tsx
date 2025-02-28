@@ -34,7 +34,7 @@ const AdminOrdersPage = async (props: {
   return (
     <div className='space-y-2'>
       <div className='flex items-center gap-3'>
-        <h1 className='h2-bold'>Orders</h1>
+        <h1 className='h2-bold'>Porudžbine</h1>
         {searchText && (
           <div>
             Fltrirano po <i>&quot;{searchText}&quot;</i>{' '}
@@ -56,7 +56,7 @@ const AdminOrdersPage = async (props: {
               <TableHead>UKUPNO</TableHead>
               <TableHead>PLAĆENO</TableHead>
               <TableHead>DOSTAVLJENO</TableHead>
-              <TableHead>AKCIJE</TableHead>
+              <TableHead></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -80,7 +80,7 @@ const AdminOrdersPage = async (props: {
                 </TableCell>
                 <TableCell>
                   <Button asChild variant='outline' size='sm'>
-                    <Link href={`/order/${order.id}`}>Details</Link>
+                    <Link href={`/order/${order.id}`}>Prikaži</Link>
                   </Button>
                   <DeleteDialog id={order.id} action={deleteOrder} />
                 </TableCell>

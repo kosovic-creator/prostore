@@ -67,7 +67,7 @@ const DealCountdown = () => {
         <div className='flex flex-col gap-2 justify-center'>
           <h3 className='text-3xl font-bold'>Akcija je zavšena </h3>
           <p>
-           Ova akcijska ponuda duže nije dostupna. Provjerite poslednje akcije!
+            Ova akcijska ponuda duže nije dostupna. Provjerite poslednje !
           </p>
 
           <div className='text-center'>

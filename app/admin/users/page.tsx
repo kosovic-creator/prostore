@@ -35,13 +35,13 @@ const AdminUserPage = async (props: {
   return (
     <div className='space-y-2'>
       <div className='flex items-center gap-3'>
-        <h1 className='h2-bold'>Users</h1>
+        <h1 className='h2-bold'>Korisnici</h1>
         {searchText && (
           <div>
-            Filtered by <i>&quot;{searchText}&quot;</i>{' '}
+            Filter po <i>&quot;{searchText}&quot;</i>{' '}
             <Link href='/admin/users'>
               <Button variant='outline' size='sm'>
-                Remove Filter
+                Ukloni Filter
               </Button>
             </Link>
           </div>
@@ -55,7 +55,7 @@ const AdminUserPage = async (props: {
               <TableHead>IME</TableHead>
               <TableHead>EMAIL</TableHead>
               <TableHead>ULOGA-ROLE</TableHead>
-              <TableHead>AKCIJA</TableHead>
+              <TableHead></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -73,7 +73,7 @@ const AdminUserPage = async (props: {
                 </TableCell>
                 <TableCell>
                   <Button asChild variant='outline' size='sm'>
-                    <Link href={`/admin/users/${user.id}`}>Edit</Link>
+                    <Link href={`/admin/users/${user.id}`}>Prikaži</Link>
                   </Button>
                   <DeleteDialog id={user.id} action={deleteUser} />
                 </TableCell>

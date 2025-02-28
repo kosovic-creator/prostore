@@ -26,11 +26,11 @@ const AdminOverviewPage = async () => {
 
   return (
     <div className='space-y-2'>
-      <h1 className='h2-bold'>Dashboard</h1>
+      <h1 className='h2-bold'>Pregled Poslovanja</h1>
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
         <Card>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-            <CardTitle className='text-sm font-medium'>Total Revenue</CardTitle>
+            <CardTitle className='text-sm font-medium'>Ukupni Prihod</CardTitle>
             <BadgeDollarSign />
           </CardHeader>
           <CardContent>
@@ -43,7 +43,7 @@ const AdminOverviewPage = async () => {
         </Card>
         <Card>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-            <CardTitle className='text-sm font-medium'>Sales</CardTitle>
+            <CardTitle className='text-sm font-medium'>Prodaja</CardTitle>
             <CreditCard />
           </CardHeader>
           <CardContent>
@@ -54,7 +54,7 @@ const AdminOverviewPage = async () => {
         </Card>
         <Card>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-            <CardTitle className='text-sm font-medium'>Customers</CardTitle>
+            <CardTitle className='text-sm font-medium'>Kupci</CardTitle>
             <Users />
           </CardHeader>
           <CardContent>
@@ -65,7 +65,7 @@ const AdminOverviewPage = async () => {
         </Card>
         <Card>
           <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-            <CardTitle className='text-sm font-medium'>Products</CardTitle>
+            <CardTitle className='text-sm font-medium'>Artikli</CardTitle>
             <Barcode />
           </CardHeader>
           <CardContent>
@@ -78,7 +78,7 @@ const AdminOverviewPage = async () => {
       <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-7'>
         <Card className='col-span-4'>
           <CardHeader>
-            <CardTitle>Overview</CardTitle>
+            <CardTitle>Pregled</CardTitle>
           </CardHeader>
           <CardContent>
             <Charts
@@ -90,7 +90,7 @@ const AdminOverviewPage = async () => {
         </Card>
         <Card className='col-span-3'>
           <CardHeader>
-            <CardTitle>Recent Sales</CardTitle>
+            <CardTitle>Nedavne Prodaje</CardTitle>
           </CardHeader>
           <CardContent>
             <Table>
@@ -99,7 +99,7 @@ const AdminOverviewPage = async () => {
                   <TableHead>KUPAC</TableHead>
                   <TableHead>DATUM</TableHead>
                   <TableHead>UKUPNO</TableHead>
-                  <TableHead>AKCIJE</TableHead>
+                  <TableHead></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

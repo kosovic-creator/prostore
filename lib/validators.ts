@@ -6,18 +6,18 @@ const currency = z
   .string()
   .refine(
     (value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(Number(value))),
-    'Price must have exactly two decimal places'
+    'Cijena mora imati tačno dva decimalna mjesta'
   );
 
 // Schema for inserting products
 export const insertProductSchema = z.object({
-  name: z.string().min(3, 'Name must be at least 3 characters'),
-  slug: z.string().min(3, 'Slug must be at least 3 characters'),
-  category: z.string().min(3, 'Category must be at least 3 characters'),
-  brand: z.string().min(3, 'Brand must be at least 3 characters'),
-  description: z.string().min(3, 'Description must be at least 3 characters'),
+  name: z.string().min(3, 'Ime mora imati najmanje 3 karaktera'),
+  slug: z.string().min(3, 'Slug mmora imati najmanje 3 karaktera'),
+  category: z.string().min(3, 'Kategorija mmora imati najmanje 3 karaktera'),
+  brand: z.string().min(3, 'Brand mora imati najmanje 3 karaktera'),
+  description: z.string().min(3, 'Karakteristike mmoraju imati najmanje 3 karaktera'),
   stock: z.coerce.number(),
-  images: z.array(z.string()).min(1, 'Product must have at least one image'),
+  images: z.array(z.string()).min(1, 'Artikal mora imati makar jednu sliku'),
   isFeatured: z.boolean(),
   banner: z.string().nullable(),
   price: currency,
@@ -25,37 +25,37 @@ export const insertProductSchema = z.object({
 
 // Schema for updating products
 export const updateProductSchema = insertProductSchema.extend({
-  id: z.string().min(1, 'Id is required'),
+  id: z.string().min(1, 'Id je obavezan'),
 });
 
 // Schema for signing users in
 export const signInFormSchema = z.object({
-  email: z.string().email('Invalid email address'),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
+  email: z.string().email('Pogrešna  email adresa'),
+  password: z.string().min(6, 'PLozinka mora imati najmanje 6 karaktera'),
 });
 
 // Schema for signing up a user
 export const signUpFormSchema = z
   .object({
-    name: z.string().min(3, 'Name must be at least 3 characters'),
-    email: z.string().email('Invalid email address'),
-    password: z.string().min(6, 'Password must be at least 6 characters'),
+    name: z.string().min(3, 'Ime mora imati najmanje 3 karaktera'),
+    email: z.string().email('Pogrešna  email adresa'),
+    password: z.string().min(6, 'Lozinka mora imati najmanje 6 karaktera'),
     confirmPassword: z
       .string()
-      .min(6, 'Confirm password must be at least 6 characters'),
+      .min(6, 'Lozinka mora imati najmanje 6 karaktera'),
   })
   .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords don't match",
+    message: "Lozinke se ne podudaraju",
     path: ['confirmPassword'],
   });
 
 // Cart Schemas
 export const cartItemSchema = z.object({
-  productId: z.string().min(1, 'Product is required'),
-  name: z.string().min(1, 'Name is required'),
-  slug: z.string().min(1, 'Slug is required'),
-  qty: z.number().int().nonnegative('Quantity must be a positive number'),
-  image: z.string().min(1, 'Image is required'),
+  productId: z.string().min(1, 'Artikal je obavezan'),
+  name: z.string().min(1, 'Ime je obavezno'),
+  slug: z.string().min(1, 'Slug je obavezan'),
+  qty: z.number().int().nonnegative('Količina mora biti pozitivni broj'),
+  image: z.string().min(1, 'Slika je obavzna'),
   price: currency,
 });
 
@@ -65,17 +65,17 @@ export const insertCartSchema = z.object({
   totalPrice: currency,
   shippingPrice: currency,
   taxPrice: currency,
-  sessionCartId: z.string().min(1, 'Session cart id is required'),
+  sessionCartId: z.string().min(1, 'Session cart id je obavezno'),
   userId: z.string().optional().nullable(),
 });
 
 // Schema for the shipping address
 export const shippingAddressSchema = z.object({
-  fullName: z.string().min(3, 'Name must be at least 3 characters'),
-  streetAddress: z.string().min(3, 'Address must be at least 3 characters'),
-  city: z.string().min(3, 'City must be at least 3 characters'),
-  postalCode: z.string().min(3, 'Postal code must be at least 3 characters'),
-  country: z.string().min(3, 'Country must be at least 3 characters'),
+  fullName: z.string().min(3, 'Ime mora imati najmanje 3 karaktera'),
+  streetAddress: z.string().min(3, 'Adresa mora imati najmanje 3 karaktera'),
+  city: z.string().min(3, 'Grad mora imati najmanje 3 karaktera'),
+  postalCode: z.string().min(3, 'Poštanski broj mora imati najmanje 3 karaktera.'),
+  country: z.string().min(3, 'Država mora imati najmanje 3 karaktera'),
   lat: z.number().optional(),
   lng: z.number().optional(),
 });
@@ -83,22 +83,22 @@ export const shippingAddressSchema = z.object({
 // Schema for payment method
 export const paymentMethodSchema = z
   .object({
-    type: z.string().min(1, 'Payment method is required'),
+    type: z.string().min(1, 'Način plaćanja je obavezan'),
   })
   .refine((data) => PAYMENT_METHODS.includes(data.type), {
     path: ['type'],
-    message: 'Invalid payment method',
+    message: 'Pogrešan način plaćanja',
   });
 
 // Schema for inserting order
 export const insertOrderSchema = z.object({
-  userId: z.string().min(1, 'User is required'),
+  userId: z.string().min(1, 'Korisnik je obavezan'),
   itemsPrice: currency,
   shippingPrice: currency,
   taxPrice: currency,
   totalPrice: currency,
   paymentMethod: z.string().refine((data) => PAYMENT_METHODS.includes(data), {
-    message: 'Invalid payment method',
+    message: 'Pogrešan način plaćanja',
   }),
   shippingAddress: shippingAddressSchema,
 });
@@ -123,25 +123,25 @@ export const paymentResultSchema = z.object({
 
 // Schema for updating the user profile
 export const updateProfileSchema = z.object({
-  name: z.string().min(3, 'Name must be at leaast 3 characters'),
-  email: z.string().min(3, 'Email must be at leaast 3 characters'),
+  name: z.string().min(3, 'Ime mora imati najmanje 3 karaktera'),
+  email: z.string().min(3, 'Email mora imati najmanje 3 karaktera'),
 });
 
 // Schema to update users
 export const updateUserSchema = updateProfileSchema.extend({
-  id: z.string().min(1, 'ID is required'),
-  role: z.string().min(1, 'Role is required'),
+  id: z.string().min(1, 'ID ije obavezan'),
+  role: z.string().min(1, 'Role je obavezna'),
 });
 
 // Schema to insert reviews
 export const insertReviewSchema = z.object({
-  title: z.string().min(3, 'Title must be at least 3 characters'),
-  description: z.string().min(3, 'Description must be at least 3 characters'),
-  productId: z.string().min(1, 'Product is required'),
-  userId: z.string().min(1, 'User is required'),
+  title: z.string().min(3, 'Naslov mora imati najmanje 3 karaktera'),
+  description: z.string().min(3, 'Karakteristike moraju imati najmanje 3 karaktera'),
+  productId: z.string().min(1, 'Artikal je obavezan'),
+  userId: z.string().min(1, 'Korisnik je obavezan'),
   rating: z.coerce
     .number()
     .int()
-    .min(1, 'Rating must be at least 1')
-    .max(5, 'Rating must be at most 5'),
+    .min(1, 'Rating mora imati najmanje 1')
+    .max(5, 'Rating može biti najviše 5'),
 });

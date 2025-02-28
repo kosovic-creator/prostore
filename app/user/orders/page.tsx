@@ -37,7 +37,7 @@ const OrdersPage = async (props: {
               <TableHead>UKUPNO</TableHead>
               <TableHead>PLAĆENO</TableHead>
               <TableHead>DOSTAVLJENO</TableHead>
-              <TableHead>AKCIJE</TableHead>
+              <TableHead></TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

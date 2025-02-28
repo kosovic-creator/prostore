@@ -39,7 +39,7 @@ const AdminProductsPage = async (props: {
     <div className='space-y-2'>
       <div className='flex-between'>
         <div className='flex items-center gap-3'>
-          <h1 className='h2-bold'>Products</h1>
+          <h1 className='h2-bold'>Artikli</h1>
           {searchText && (
             <div>
               Filtered by <i>&quot;{searchText}&quot;</i>{' '}
@@ -61,11 +61,11 @@ const AdminProductsPage = async (props: {
           <TableRow>
             <TableHead>ID</TableHead>
             <TableHead>NAZIV</TableHead>
-            <TableHead className='text-right'>PRICE</TableHead>
+            <TableHead className='text-right'>CIJENA</TableHead>
             <TableHead>KATEGORIJA</TableHead>
             <TableHead>STANJE</TableHead>
             <TableHead>GLASANJE</TableHead>
-            <TableHead className='w-[100px]'>ACTIONS</TableHead>
+            <TableHead className='w-[100px]'></TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -81,7 +81,7 @@ const AdminProductsPage = async (props: {
               <TableCell>{product.rating}</TableCell>
               <TableCell className='flex gap-1'>
                 <Button asChild variant='outline' size='sm'>
-                  <Link href={`/admin/products/${product.id}`}>Edit</Link>
+                  <Link href={`/admin/products/${product.id}`}>Prikaži</Link>
                 </Button>
                 <DeleteDialog id={product.id} action={deleteProduct} />
               </TableCell>

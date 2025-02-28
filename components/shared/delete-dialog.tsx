@@ -47,7 +47,7 @@ const DeleteDialog = ({
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
         <Button size='sm' variant='destructive' className='ml-2'>
-          Delete
+          Obriši
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
