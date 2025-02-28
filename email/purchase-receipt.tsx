@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import {
   Body,
   Column,
@@ -69,7 +70,7 @@ type OrderInformationProps = {
 export default function PurchaseReceiptEmail({ order }: OrderInformationProps) {
   return (
     <Html>
-      <Preview>View order receipt</Preview>
+      <Preview>VPregled prispjele porudžbine</Preview>
       <Tailwind>
         <Head />
         <Body className='font-sans bg-white'>
