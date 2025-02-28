@@ -45,14 +45,14 @@ const AdminProductsPage = async (props: {
               Filtered by <i>&quot;{searchText}&quot;</i>{' '}
               <Link href='/admin/products'>
                 <Button variant='outline' size='sm'>
-                  Remove Filter
+                  Ukloni Filter
                 </Button>
               </Link>
             </div>
           )}
         </div>
         <Button asChild variant='default'>
-          <Link href='/admin/products/create'>Create Product</Link>
+          <Link href='/admin/products/create'>Dodaj Artikal</Link>
         </Button>
       </div>
 
@@ -60,11 +60,11 @@ const AdminProductsPage = async (props: {
         <TableHeader>
           <TableRow>
             <TableHead>ID</TableHead>
-            <TableHead>NAME</TableHead>
+            <TableHead>NAZIV</TableHead>
             <TableHead className='text-right'>PRICE</TableHead>
-            <TableHead>CATEGORY</TableHead>
-            <TableHead>STOCK</TableHead>
-            <TableHead>RATING</TableHead>
+            <TableHead>KATEGORIJA</TableHead>
+            <TableHead>STANJE</TableHead>
+            <TableHead>GLASANJE</TableHead>
             <TableHead className='w-[100px]'>ACTIONS</TableHead>
           </TableRow>
         </TableHeader>

@@ -17,7 +17,7 @@ import DeleteDialog from '@/components/shared/delete-dialog';
 import { requireAdmin } from '@/lib/auth-guard';
 
 export const metadata: Metadata = {
-  title: 'Admin Users',
+  title: 'Administracija Korisnika',
 };
 
 const AdminUserPage = async (props: {
@@ -52,10 +52,10 @@ const AdminUserPage = async (props: {
           <TableHeader>
             <TableRow>
               <TableHead>ID</TableHead>
-              <TableHead>NAME</TableHead>
+              <TableHead>IME</TableHead>
               <TableHead>EMAIL</TableHead>
-              <TableHead>ROLE</TableHead>
-              <TableHead>ACTIONS</TableHead>
+              <TableHead>ULOGA-ROLE</TableHead>
+              <TableHead>AKCIJA</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

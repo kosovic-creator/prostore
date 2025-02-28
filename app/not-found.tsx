@@ -16,7 +16,7 @@ const NotFoundPage = () => {
       />
       <div className='p-6 w-1/3 rounded-lg shadow-md text-center'>
         <h1 className='text-3xl font-bold mb-4'>Nije nađeno</h1>
-        <p className='text-destructive'>Ne možemo da nađemo traženu stranicu</p>
+        <p className='text-destructive'>Stranica koju tražite ne postoji</p>
         <Button variant='outline' className='mt-4 ml-2' asChild>
           <Link href='/'>Nazad na početnu stranicu</Link>
         </Button>

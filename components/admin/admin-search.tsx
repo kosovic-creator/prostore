@@ -30,7 +30,7 @@ const AdminSearch = () => {
         className='md:w-[100px] lg:w-[300px]'
       />
       <button className='sr-only' type='submit'>
-        Search
+       Traži
       </button>
     </form>
   );

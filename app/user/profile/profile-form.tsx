@@ -101,7 +101,7 @@ const ProfileForm = () => {
           className='button col-span-2 w-full'
           disabled={form.formState.isSubmitting}
         >
-          {form.formState.isSubmitting ? 'Submitting...' : 'Update Profile'}
+          {form.formState.isSubmitting ? 'Ažuriranje...' : 'Ažuriraj Profil'}
         </Button>
       </form>
     </Form>

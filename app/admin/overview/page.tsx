@@ -16,7 +16,7 @@ import Charts from './charts';
 import { requireAdmin } from '@/lib/auth-guard';
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard',
+  title: 'Pregleg poslovanja',
 };
 
 const AdminOverviewPage = async () => {
@@ -96,10 +96,10 @@ const AdminOverviewPage = async () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>BUYER</TableHead>
-                  <TableHead>DATE</TableHead>
-                  <TableHead>TOTAL</TableHead>
-                  <TableHead>ACTIONS</TableHead>
+                  <TableHead>KUPAC</TableHead>
+                  <TableHead>DATUM</TableHead>
+                  <TableHead>UKUPNO</TableHead>
+                  <TableHead>AKCIJE</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -114,7 +114,7 @@ const AdminOverviewPage = async () => {
                     <TableCell>{formatCurrency(order.totalPrice)}</TableCell>
                     <TableCell>
                       <Link href={`/order/${order.id}`}>
-                        <span className='px-2'>Details</span>
+                        <span className='px-2'>Detalji</span>
                       </Link>
                     </TableCell>
                   </TableRow>

@@ -13,7 +13,7 @@ import {
 import Pagination from '@/components/shared/pagination';
 
 export const metadata: Metadata = {
-  title: 'My Orders',
+  title: 'Moje Porudžbine',
 };
 
 const OrdersPage = async (props: {
@@ -33,11 +33,11 @@ const OrdersPage = async (props: {
           <TableHeader>
             <TableRow>
               <TableHead>ID</TableHead>
-              <TableHead>DATE</TableHead>
-              <TableHead>TOTAL</TableHead>
-              <TableHead>PAID</TableHead>
-              <TableHead>DELIVERED</TableHead>
-              <TableHead>ACTIONS</TableHead>
+              <TableHead>DATUM</TableHead>
+              <TableHead>UKUPNO</TableHead>
+              <TableHead>PLAĆENO</TableHead>
+              <TableHead>DOSTAVLJENO</TableHead>
+              <TableHead>AKCIJE</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -51,12 +51,12 @@ const OrdersPage = async (props: {
                 <TableCell>
                   {order.isPaid && order.paidAt
                     ? formatDateTime(order.paidAt).dateTime
-                    : 'Not Paid'}
+                    : 'Nije Plaćeno'}
                 </TableCell>
                 <TableCell>
                   {order.isDelivered && order.deliveredAt
                     ? formatDateTime(order.deliveredAt).dateTime
-                    : 'Not Delivered'}
+                    : 'Nije dostavljeno'}
                 </TableCell>
                 <TableCell>
                   <Link href={`/order/${order.id}`}>

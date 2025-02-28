@@ -16,7 +16,7 @@ import DeleteDialog from '@/components/shared/delete-dialog';
 import { requireAdmin } from '@/lib/auth-guard';
 
 export const metadata: Metadata = {
-  title: 'Admin Orders',
+  title: 'Administracija Porudžbina',
 };
 
 const AdminOrdersPage = async (props: {
@@ -37,10 +37,10 @@ const AdminOrdersPage = async (props: {
         <h1 className='h2-bold'>Orders</h1>
         {searchText && (
           <div>
-            Filtered by <i>&quot;{searchText}&quot;</i>{' '}
+            Fltrirano po <i>&quot;{searchText}&quot;</i>{' '}
             <Link href='/admin/orders'>
               <Button variant='outline' size='sm'>
-                Remove Filter
+                Ukloni Filter
               </Button>
             </Link>
           </div>
@@ -51,12 +51,12 @@ const AdminOrdersPage = async (props: {
           <TableHeader>
             <TableRow>
               <TableHead>ID</TableHead>
-              <TableHead>DATE</TableHead>
-              <TableHead>BUYER</TableHead>
-              <TableHead>TOTAL</TableHead>
-              <TableHead>PAID</TableHead>
-              <TableHead>DELIVERED</TableHead>
-              <TableHead>ACTIONS</TableHead>
+              <TableHead>DATUM</TableHead>
+              <TableHead>KUPAC</TableHead>
+              <TableHead>UKUPNO</TableHead>
+              <TableHead>PLAĆENO</TableHead>
+              <TableHead>DOSTAVLJENO</TableHead>
+              <TableHead>AKCIJE</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -71,12 +71,12 @@ const AdminOrdersPage = async (props: {
                 <TableCell>
                   {order.isPaid && order.paidAt
                     ? formatDateTime(order.paidAt).dateTime
-                    : 'Not Paid'}
+                    : 'Nije Plaćeno'}
                 </TableCell>
                 <TableCell>
                   {order.isDelivered && order.deliveredAt
                     ? formatDateTime(order.deliveredAt).dateTime
-                    : 'Not Delivered'}
+                    : 'Nije Dostavljeno'}
                 </TableCell>
                 <TableCell>
                   <Button asChild variant='outline' size='sm'>

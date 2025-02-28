@@ -87,7 +87,7 @@ const UpdateUserForm = ({
                 <FormControl>
                   <Input
                     disabled={true}
-                    placeholder='Enter user email'
+                    placeholder='Unesite korisnikov email'
                     {...field}
                   />
                 </FormControl>
@@ -112,7 +112,7 @@ const UpdateUserForm = ({
               <FormItem className='w-full'>
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder='Enter user name' {...field} />
+                  <Input placeholder='Unsite Korisničko ime' {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -140,7 +140,7 @@ const UpdateUserForm = ({
                 >
                   <FormControl>
                     <SelectTrigger>
-                      <SelectValue placeholder='Select a role' />
+                      <SelectValue placeholder='Izaberite ulogu korisničku' />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
@@ -162,7 +162,7 @@ const UpdateUserForm = ({
             className='w-full'
             disabled={form.formState.isSubmitting}
           >
-            {form.formState.isSubmitting ? 'Submitting...' : 'Update User'}
+            {form.formState.isSubmitting ? 'Ažuriranje...' : 'UAžđuriraj Korisnika'}
           </Button>
         </div>
       </form>

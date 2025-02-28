@@ -8,7 +8,7 @@ const IconBoxes = () => {
         <CardContent className='grid md:grid-cols-4 gap-4 p-4'>
           <div className='space-y-2'>
             <ShoppingBag />
-            <div className='text-sm font-bold'>Besplagna dostava</div>
+            <div className='text-sm font-bold'>Besplatna dostava</div>
             <div className='text-sm text-muted-foreground'>
               Besplatna dostava do €100
             </div>
@@ -22,7 +22,7 @@ const IconBoxes = () => {
           </div>
           <div className='space-y-2'>
             <WalletCards />
-            <div className='text-sm font-bold'>Flexible Payment</div>
+            <div className='text-sm font-bold'>Fleksibilno Plaćanje</div>
             <div className='text-sm text-muted-foreground'>
               Plati sa credit card, PayPal ili COD
             </div>
