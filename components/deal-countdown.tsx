@@ -50,7 +50,7 @@ const DealCountdown = () => {
     return (
       <section className='grid grid-cols-1 md:grid-cols-2 my-20'>
         <div className='flex flex-col gap-2 justify-center'>
-          <h3 className='text-3xl font-bold'>Loading Countdown...</h3>
+          <h3 className='text-3xl font-bold'>Učitava se...</h3>
         </div>
       </section>
     );
@@ -65,14 +65,14 @@ const DealCountdown = () => {
     return (
       <section className='grid grid-cols-1 md:grid-cols-2 my-20'>
         <div className='flex flex-col gap-2 justify-center'>
-          <h3 className='text-3xl font-bold'>Deal Has Ended</h3>
+          <h3 className='text-3xl font-bold'>Akcija je zavšena </h3>
           <p>
-            This deal is no longer available. Check out our latest promotions!
+           Ova akcijska ponuda duže nije dostupna. Provjerite poslednje akcije!
           </p>
 
           <div className='text-center'>
             <Button asChild>
-              <Link href='/search'>View Products</Link>
+              <Link href='/search'>Pregled Artikala</Link>
             </Button>
           </div>
         </div>

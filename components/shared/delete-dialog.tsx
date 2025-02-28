@@ -52,9 +52,9 @@ const DeleteDialog = ({
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>Jeste li sigurni?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone
+            Ovom brisanjem ne mogu se vratiti podaci
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -65,7 +65,7 @@ const DeleteDialog = ({
             disabled={isPending}
             onClick={handleDeleteClick}
           >
-            {isPending ? 'Deleting...' : 'Delete'}
+            {isPending ? 'Brisanje...' : 'Ukloni'}
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>
