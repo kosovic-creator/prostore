@@ -142,7 +142,7 @@ const ReviewForm = ({
                 render={({ field }) => {
                   return (
                     <FormItem>
-                      <FormLabel>Rating</FormLabel>
+                      <FormLabel>Ocjenjivanje</FormLabel>
                       <Select
                         onValueChange={field.onChange}
                         value={field.value.toString()}

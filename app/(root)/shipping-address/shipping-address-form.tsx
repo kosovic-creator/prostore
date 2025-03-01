@@ -121,7 +121,7 @@ const ShippingAddressForm = ({ address }: { address: ShippingAddress }) => {
                   >;
                 }) => (
                   <FormItem className='w-full'>
-                    <FormLabel>City</FormLabel>
+                    <FormLabel>Grad</FormLabel>
                     <FormControl>
                       <Input placeholder='Unesite grad' {...field} />
                     </FormControl>
