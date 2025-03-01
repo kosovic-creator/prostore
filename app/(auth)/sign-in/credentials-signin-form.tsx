@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { signInDefaultValues } from '@/lib/constants';
+// import { signInDefaultValues } from '@/lib/constants';
 import Link from 'next/link';
 import { useActionState } from 'react';
 import { useFormStatus } from 'react-dom';
@@ -24,7 +24,7 @@ const CredentialsSignInForm = () => {
 
     return (
       <Button disabled={pending} className='w-full' variant='default'>
-        {pending ? 'SPrijavljivanje...' : 'Prijava'}
+        {pending ? 'Prijavljivanje...' : 'Prijava'}
       </Button>
     );
   };
@@ -41,7 +41,7 @@ const CredentialsSignInForm = () => {
             type='email'
             required
             autoComplete='email'
-            defaultValue={signInDefaultValues.email}
+            // defaultValue={signInDefaultValues.email}
           />
         </div>
         <div>
@@ -52,7 +52,7 @@ const CredentialsSignInForm = () => {
             type='password'
             required
             autoComplete='password'
-            defaultValue={signInDefaultValues.password}
+          // defaultValue={signInDefaultValues.password}
           />
         </div>
         <div>
