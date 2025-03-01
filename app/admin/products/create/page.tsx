@@ -11,7 +11,7 @@ const CreateProductPage = async () => {
     <>
       <h2 className='h2-bold'>Dodaj Artikal</h2>
       <div className='my-8'>
-        <ProductForm type='Dodaj' />
+        <ProductForm type='Create' />
       </div>
     </>
   );

@@ -306,7 +306,7 @@ const ProductForm = ({
                         onCheckedChange={field.onChange}
                       />
                     </FormControl>
-                    <FormLabel>Predstavljen?</FormLabel>
+                    <FormLabel>Istaknuti?</FormLabel>
                   </FormItem>
                 )}
               />
@@ -371,7 +371,7 @@ const ProductForm = ({
             disabled={form.formState.isSubmitting}
             className='button col-span-2 w-full'
           >
-            {form.formState.isSubmitting ? 'Submitting' : `${type} Artikal`}
+            {form.formState.isSubmitting ? 'Submitting' : `Dodaj Artikal`}
           </Button>
         </div>
       </form>
