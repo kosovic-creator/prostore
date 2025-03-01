@@ -177,7 +177,7 @@ const ReviewForm = ({
                 className='w-full'
                 disabled={form.formState.isSubmitting}
               >
-                {form.formState.isSubmitting ? 'Submitting...' : 'Submit'}
+                {form.formState.isSubmitting ? 'Submitting...' : 'Dodaj'}
               </Button>
             </DialogFooter>
           </form>
