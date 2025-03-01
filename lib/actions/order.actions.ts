@@ -22,7 +22,7 @@ export async function createOrder() {
 
     const cart = await getMyCart();
     const userId = session?.user?.id;
-    if (!userId) throw new Error('Nije naen korisnik');
+    if (!userId) throw new Error('Nije nađen korisnik');
 
     const user = await getUserById(userId);
 
@@ -278,7 +278,7 @@ export async function getMyOrders({
   page: number;
 }) {
   const session = await auth();
-  if (!session) throw new Error('User is not authorized');
+  if (!session) throw new Error('Korisnik nema prevo prstupa');
 
   const data = await prisma.order.findMany({
     where: { userId: session?.user?.id },
@@ -392,7 +392,7 @@ export async function deleteOrder(id: string) {
 
     return {
       success: true,
-      message: 'Order deleted successfully',
+      message: 'Porudžbina je uspješno obrisana',
     };
   } catch (error) {
     return { success: false, message: formatError(error) };
@@ -406,7 +406,7 @@ export async function updateOrderToPaidCOD(orderId: string) {
 
     revalidatePath(`/order/${orderId}`);
 
-    return { success: true, message: 'Order marked as paid' };
+    return { success: true, message: 'Porudžbina je označena kao plaćena' };
   } catch (error) {
     return { success: false, message: formatError(error) };
   }

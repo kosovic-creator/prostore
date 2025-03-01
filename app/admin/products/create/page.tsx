@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ProductForm from '@/components/admin/product-form';
 import { requireAdmin } from '@/lib/auth-guard';
 export const metadata: Metadata = {
-  title: 'Create Product',
+  title: 'Dodaj Artikal',
 };
 
 const CreateProductPage = async () => {
@@ -11,7 +11,7 @@ const CreateProductPage = async () => {
     <>
       <h2 className='h2-bold'>Dodaj Artikal</h2>
       <div className='my-8'>
-        <ProductForm type='Create' />
+        <ProductForm type='Dodaj' />
       </div>
     </>
   );

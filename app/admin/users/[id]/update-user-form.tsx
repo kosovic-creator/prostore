@@ -162,7 +162,7 @@ const UpdateUserForm = ({
             className='w-full'
             disabled={form.formState.isSubmitting}
           >
-            {form.formState.isSubmitting ? 'Ažuriranje...' : 'UAžđuriraj Korisnika'}
+            {form.formState.isSubmitting ? 'Ažuriranje...' : 'Sačuvaj'}
           </Button>
         </div>
       </form>
