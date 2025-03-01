@@ -20,8 +20,9 @@ import Image from 'next/image';
 import { formatCurrency } from '@/lib/utils';
 import PlaceOrderForm from './place-order-form';
 
+
 export const metadata: Metadata = {
-  title: 'Place Order',
+  title: 'Postavi Porudžbinu',
 };
 
 const PlaceOrderPage = async () => {
@@ -29,7 +30,7 @@ const PlaceOrderPage = async () => {
   const session = await auth();
   const userId = session?.user?.id;
 
-  if (!userId) throw new Error('User not found');
+  if (!userId) throw new Error('Korisnik nije nađen');
 
   const user = await getUserById(userId);
 
@@ -105,7 +106,7 @@ const PlaceOrderPage = async () => {
                         <span className='px-2'>{item.qty}</span>
                       </TableCell>
                       <TableCell className='text-right'>
-                        ${item.price}
+                      €{item.price}
                       </TableCell>
                     </TableRow>
                   ))}

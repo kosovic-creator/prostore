@@ -62,9 +62,9 @@ const OrderDetailsTable = ({
     let status = '';
 
     if (isPending) {
-      status = 'Loading PayPal...';
+      status = 'Konektijem se na PayPal...';
     } else if (isRejected) {
-      status = 'Error Loading PayPal';
+      status = 'Greška pri konektovanju sa PayPal';
     }
     return status;
   };
@@ -110,7 +110,7 @@ const OrderDetailsTable = ({
           })
         }
       >
-        {isPending ? 'processing...' : 'Mark As Paid'}
+        {isPending ? 'radim...' : 'Označi kao Plaćeno'}
       </Button>
     );
   };
@@ -134,7 +134,7 @@ const OrderDetailsTable = ({
           })
         }
       >
-        {isPending ? 'processing...' : 'Mark As Delivered'}
+        {isPending ? 'radim...' : 'Označi kao Dostavljeno'}
       </Button>
     );
   };
@@ -146,20 +146,20 @@ const OrderDetailsTable = ({
         <div className='col-span-2 space-4-y overlow-x-auto'>
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Payment Method</h2>
+              <h2 className='text-xl pb-4'>Način Plaćanja</h2>
               <p className='mb-2'>{paymentMethod}</p>
               {isPaid ? (
                 <Badge variant='secondary'>
                   Paid at {formatDateTime(paidAt!).dateTime}
                 </Badge>
               ) : (
-                <Badge variant='destructive'>Not paid</Badge>
+                <Badge variant='destructive'>Nije plaćeno</Badge>
               )}
             </CardContent>
           </Card>
           <Card className='my-2'>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Shipping Address</h2>
+              <h2 className='text-xl pb-4'>Adresa Dostave</h2>
               <p>{shippingAddress.fullName}</p>
               <p className='mb-2'>
                 {shippingAddress.streetAddress}, {shippingAddress.city}
@@ -170,19 +170,19 @@ const OrderDetailsTable = ({
                   Delivered at {formatDateTime(deliveredAt!).dateTime}
                 </Badge>
               ) : (
-                <Badge variant='destructive'>Not Delivered</Badge>
+                <Badge variant='destructive'>Nije Dostavljeno</Badge>
               )}
             </CardContent>
           </Card>
           <Card>
             <CardContent className='p-4 gap-4'>
-              <h2 className='text-xl pb-4'>Order Items</h2>
+              <h2 className='text-xl pb-4'>Poručeni Artikli</h2>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Item</TableHead>
-                    <TableHead>Quantity</TableHead>
-                    <TableHead>Price</TableHead>
+                    <TableHead>Artikal</TableHead>
+                    <TableHead>Količina</TableHead>
+                    <TableHead>Cijena</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -219,19 +219,19 @@ const OrderDetailsTable = ({
           <Card>
             <CardContent className='p-4 gap-4 space-y-4'>
               <div className='flex justify-between'>
-                <div>Items</div>
+                <div>Artikal</div>
                 <div>{formatCurrency(itemsPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Tax</div>
+                <div>Porez</div>
                 <div>{formatCurrency(taxPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Shipping</div>
+                <div>Dostava</div>
                 <div>{formatCurrency(shippingPrice)}</div>
               </div>
               <div className='flex justify-between'>
-                <div>Total</div>
+                <div>Ukupno</div>
                 <div>{formatCurrency(totalPrice)}</div>
               </div>
 
@@ -258,7 +258,7 @@ const OrderDetailsTable = ({
               )}
 
               {/* Cash On Delivery */}
-              {isAdmin && !isPaid && paymentMethod === 'CashOnDelivery' && (
+              {isAdmin && !isPaid && paymentMethod === 'PlaćanjePriDostavi' && (
                 <MarkAsPaidButton />
               )}
               {isAdmin && isPaid && !isDelivered && <MarkAsDeliveredButton />}

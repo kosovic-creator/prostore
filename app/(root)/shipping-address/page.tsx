@@ -8,7 +8,7 @@ import ShippingAddressForm from './shipping-address-form';
 import CheckoutSteps from '@/components/shared/checkout-steps';
 
 export const metadata: Metadata = {
-  title: 'Shipping Address',
+  title: 'Adresa Dostavljanja',
 };
 
 const ShippingAddressPage = async () => {

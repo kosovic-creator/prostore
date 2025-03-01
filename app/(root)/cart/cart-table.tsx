@@ -91,7 +91,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
       <h1 className='py-4 h2-bold'>Korpa</h1>
       {!cart || cart.items.length === 0 ? (
         <div>
-          Cart is empty. <Link href='/'>Go Shopping</Link>
+          Korpa je prazna. <Link href='/'>Idi u trgovinu</Link>
         </div>
       ) : (
         <div className='grid md:grid-cols-4 md:gap-5'>
@@ -99,7 +99,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Item</TableHead>
+                  <TableHead>Artikal</TableHead>
                   <TableHead className='text-center'>Količina</TableHead>
                   <TableHead className='text-right'>Cijena</TableHead>
                 </TableRow>
@@ -126,7 +126,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                       <span>{item.qty}</span>
                       <AddButton item={item} />
                     </TableCell>
-                    <TableCell className='text-right'>${item.price}</TableCell>
+                    <TableCell className='text-right'>€{item.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

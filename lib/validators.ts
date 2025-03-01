@@ -31,7 +31,7 @@ export const updateProductSchema = insertProductSchema.extend({
 // Schema for signing users in
 export const signInFormSchema = z.object({
   email: z.string().email('Pogrešna  email adresa'),
-  password: z.string().min(6, 'PLozinka mora imati najmanje 6 karaktera'),
+  password: z.string().min(6, 'Lozinka mora imati najmanje 6 karaktera'),
 });
 
 // Schema for signing up a user
@@ -46,7 +46,7 @@ export const signUpFormSchema = z
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Lozinke se ne podudaraju",
-    path: ['confirmPassword'],
+    path: ['potvrdiLozinku'],
   });
 
 // Cart Schemas
