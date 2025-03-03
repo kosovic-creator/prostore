@@ -31,7 +31,7 @@ const prices = [
 
 const ratings = [4, 3, 2, 1];
 
-const sortOrders = ['newest', 'lowest', 'highest', 'rating'];
+const sortOrders = ['najnovije', 'jeftinije', 'skuplje', 'ocjeni'];
 
 export async function generateMetadata(props: {
   searchParams: Promise<{
@@ -57,14 +57,14 @@ export async function generateMetadata(props: {
   if (isQuerySet || isCategorySet || isPriceSet || isRatingSet) {
     return {
       title: `
-      Search ${isQuerySet ? q : ''} 
+      Search ${isQuerySet ? q : ''}
       ${isCategorySet ? `: Category ${category}` : ''}
       ${isPriceSet ? `: Price ${price}` : ''}
       ${isRatingSet ? `: Rating ${rating}` : ''}`,
     };
   } else {
     return {
-      title: 'Search Products',
+      title: 'Traži Artikle',
     };
   }
 }
@@ -128,7 +128,7 @@ const SearchPage = async (props: {
     <div className='grid md:grid-cols-5 md:gap-5'>
       <div className='filter-links'>
         {/* Category Links */}
-        <div className='text-xl mb-2 mt-3'>Department</div>
+        <div className='text-xl mb-2 mt-3'>Odelenja</div>
         <div>
           <ul className='space-y-1'>
             <li>
@@ -138,7 +138,7 @@ const SearchPage = async (props: {
                 }`}
                 href={getFilterUrl({ c: 'all' })}
               >
-                Any
+                Svi Artikli
               </Link>
             </li>
             {categories.map((x) => (
@@ -154,7 +154,7 @@ const SearchPage = async (props: {
           </ul>
         </div>
         {/* Price Links */}
-        <div className='text-xl mb-2 mt-8'>Price</div>
+        <div className='text-xl mb-2 mt-8'>Cijena</div>
         <div>
           <ul className='space-y-1'>
             <li>
@@ -162,7 +162,7 @@ const SearchPage = async (props: {
                 className={`${price === 'all' && 'font-bold'}`}
                 href={getFilterUrl({ p: 'all' })}
               >
-                Any
+                Svi Artikli
               </Link>
             </li>
             {prices.map((p) => (
@@ -178,7 +178,7 @@ const SearchPage = async (props: {
           </ul>
         </div>
         {/* Rating Links */}
-        <div className='text-xl mb-2 mt-8'>Customer Ratings</div>
+        <div className='text-xl mb-2 mt-8'>Recenzije Kupaca</div>
         <div>
           <ul className='space-y-1'>
             <li>
@@ -186,7 +186,7 @@ const SearchPage = async (props: {
                 className={`${rating === 'all' && 'font-bold'}`}
                 href={getFilterUrl({ r: 'all' })}
               >
-                Any
+                Svi Artikli
               </Link>
             </li>
             {ratings.map((r) => (
@@ -215,12 +215,12 @@ const SearchPage = async (props: {
             rating !== 'all' ||
             price !== 'all' ? (
               <Button variant={'link'} asChild>
-                <Link href='/search'>Clear</Link>
+                <Link href='/search'>Očisti</Link>
               </Button>
             ) : null}
           </div>
           <div>
-            Sort by{' '}
+            Sortiraj po{' '}
             {sortOrders.map((s) => (
               <Link
                 key={s}
@@ -233,7 +233,7 @@ const SearchPage = async (props: {
           </div>
         </div>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
-          {products.data.length === 0 && <div>No products found</div>}
+          {products.data.length === 0 && <div>Artikal nije nađen</div>}
           {products.data.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

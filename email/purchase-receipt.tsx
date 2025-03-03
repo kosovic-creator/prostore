@@ -24,7 +24,7 @@ PurchaseReceiptEmail.PreviewProps = {
     userId: '123',
     user: {
       name: 'John Doe',
-      email: 'test@test.com',
+      email: 'drasko.kosovic@icloud.com',
     },
     paymentMethod: 'Stripe',
     shippingAddress: {
