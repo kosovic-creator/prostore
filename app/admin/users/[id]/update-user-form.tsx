@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -58,6 +59,7 @@ const UpdateUserForm = ({
       });
       form.reset();
       router.push('/admin/users');
+      {POST()}
     } catch (error) {
       toast({
         variant: 'destructive',
@@ -66,6 +68,32 @@ const UpdateUserForm = ({
     }
   };
 
+  async function POST(): Promise<void> {
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userId: user.id }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Graška pri slanju email');
+      }
+
+      toast({
+        description: 'Email je uspješno poslat',
+      });
+    } catch (error) {
+      toast({
+        variant: 'destructive',
+        description: (error as Error).message,
+      });
+    }
+  }
   return (
     <Form {...form}>
       <form method='POST' onSubmit={form.handleSubmit(onSubmit)}>
@@ -163,7 +191,9 @@ const UpdateUserForm = ({
             disabled={form.formState.isSubmitting}
           >
             {form.formState.isSubmitting ? 'Ažuriranje...' : 'Sačuvaj'}
+
           </Button>
+
         </div>
       </form>
     </Form>

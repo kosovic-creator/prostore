@@ -1,4 +1,6 @@
+
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Prodavnica';
+export const ENDER_EMAIL = process.env.SENDER_EMAIL;
 export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION ||
   'A modernModerna ecommerce prodavnica u okružrnje Next.js';

@@ -18,6 +18,7 @@ import { PAGE_SIZE } from '../constants';
 import { revalidatePath } from 'next/cache';
 import { Prisma } from '@prisma/client';
 import { getMyCart } from './cart.actions';
+import { POST } from '@/email/route';
 
 // Sign in the user with credentials
 export async function signInWithCredentials(
@@ -121,6 +122,7 @@ export async function updateUserAddress(data: ShippingAddress) {
       success: true,
       message: 'Korisnik je uspješno ažuriran',
     };
+
   } catch (error) {
     return { success: false, message: formatError(error) };
   }
