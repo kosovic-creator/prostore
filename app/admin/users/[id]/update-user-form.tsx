@@ -75,7 +75,7 @@ const UpdateUserForm = ({
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userId: user.id }),
+        body: JSON.stringify({ Name: user.name }),
       });
 
       const data = await response.json();
