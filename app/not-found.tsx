@@ -3,7 +3,7 @@ import { APP_NAME } from '@/lib/constants';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import handler from './mail/page';
+
 //import { sendPurchaseReceipt } from '@/email';
 // import handler from '@/email/send';
 
@@ -23,7 +23,7 @@ const NotFoundPage = () => {
         <Button variant='outline' className='mt-4 ml-2' asChild>
           <Link href='/'>Nazad na početnu stranicu</Link>
         </Button>
-        <Button onClick={() => handler()}>mail</Button>
+       
       </div>
     </div>
   );
