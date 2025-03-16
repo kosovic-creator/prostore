@@ -80,7 +80,7 @@ const StripePayment = ({
         >
           {isLoading
             ? 'Purchasing...'
-            : `Purchase ${formatCurrency(priceInCents / 100)}`}
+            : `Naplati ${formatCurrency(priceInCents / 100)}`}
         </Button>
       </form>
     );
