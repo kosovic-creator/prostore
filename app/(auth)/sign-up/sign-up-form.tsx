@@ -25,6 +25,7 @@ const SignUpForm = () => {
     return (
       <Button disabled={pending} className='w-full' variant='default'>
         {pending ? 'Dodavanje...' : 'Novi korisnik'}
+
       </Button>
     );
   };
@@ -76,6 +77,7 @@ const SignUpForm = () => {
           />
         </div>
         <div>
+          
           <SignUpButton />
         </div>
 

@@ -82,7 +82,7 @@ export async function signUpUser(prevState: unknown, formData: FormData) {
       password: plainPassword,
     });
 
-    return { success: true, message: 'Korisnik je uspešno registrovan' };
+    return { success: true, message: 'Korisnik je uspešno prijavljen' };
   } catch (error) {
     if (isRedirectError(error)) {
       throw error;

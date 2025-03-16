@@ -58,7 +58,7 @@ const DeleteDialog = ({
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Odloži</AlertDialogCancel>
           <Button
             variant='destructive'
             size='sm'

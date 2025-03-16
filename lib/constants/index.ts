@@ -3,7 +3,7 @@ export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'Prodavnica';
 export const ENDER_EMAIL = process.env.SENDER_EMAIL;
 export const APP_DESCRIPTION =
   process.env.NEXT_PUBLIC_APP_DESCRIPTION ||
-  'A modernModerna ecommerce prodavnica u okružrnje Next.js';
+  'Moderna e commerce prodavnica u okružrnje Next.js';
 export const SERVER_URL =
   process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000';
 export const LATEST_PRODUCTS_LIMIT =
